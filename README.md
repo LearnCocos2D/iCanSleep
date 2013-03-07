@@ -1,8 +1,10 @@
-iCanSleep is a free, open source menu bar tool to prevent your Mac from sleeping for a while. 
+iCanSleep is a free, open source status bar tool to prevent your Mac from sleeping for a while. 
 
 The main point of this tool is to allow the Mac to go back to "I can sleep" mode again
 after the "no sleep" period is over. Hence the name.
 
+Get more info and download links here:
+http://www.koboldtouch.com/display/ICS
 
 Unique Features:
 ----------------

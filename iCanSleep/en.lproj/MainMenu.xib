@@ -1419,6 +1419,22 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="623096509">
+						<reference key="NSMenu" ref="734949212"/>
+						<string key="NSTitle">Folder:</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="342142680">
+						<reference key="NSMenu" ref="734949212"/>
+						<string key="NSTitle">Last Activity:</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="89948839">
 						<reference key="NSMenu" ref="734949212"/>
 						<string key="NSTitle">Select Folder to Monitor for Activity</string>
@@ -1447,7 +1463,8 @@
 					</object>
 					<object class="NSMenuItem" id="796033540">
 						<reference key="NSMenu" ref="734949212"/>
-						<string key="NSTitle">Toggle Awesome Info Window</string>
+						<bool key="NSIsHidden">YES</bool>
+						<string key="NSTitle">Toggle Info Window</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -1455,7 +1472,25 @@
 					</object>
 					<object class="NSMenuItem" id="109181183">
 						<reference key="NSMenu" ref="734949212"/>
-						<string key="NSTitle">Help &amp; About</string>
+						<string key="NSTitle">About &amp; More ...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="888193413">
+						<reference key="NSMenu" ref="734949212"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="216982760">
+						<reference key="NSMenu" ref="734949212"/>
+						<string key="NSTitle">Quit</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -2217,6 +2252,62 @@
 						<reference key="destination" ref="1025980850"/>
 					</object>
 					<int key="connectionID">569</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">helpAndAbout:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="109181183"/>
+					</object>
+					<int key="connectionID">571</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">activityStatus</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="342142680"/>
+					</object>
+					<int key="connectionID">589</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">browseActivityFolder:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="89948839"/>
+					</object>
+					<int key="connectionID">590</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">setActivityNoSleepTime:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="866248817"/>
+					</object>
+					<int key="connectionID">591</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">setActivityNoSleepItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="866248817"/>
+					</object>
+					<int key="connectionID">592</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">quit:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="216982760"/>
+					</object>
+					<int key="connectionID">595</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">activityFolderItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="623096509"/>
+					</object>
+					<int key="connectionID">598</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3327,12 +3418,16 @@
 							<reference ref="316464851"/>
 							<reference ref="550846687"/>
 							<reference ref="866248817"/>
-							<reference ref="89948839"/>
 							<reference ref="796033540"/>
 							<reference ref="142538390"/>
 							<reference ref="679423857"/>
 							<reference ref="1025980850"/>
 							<reference ref="109181183"/>
+							<reference ref="342142680"/>
+							<reference ref="216982760"/>
+							<reference ref="888193413"/>
+							<reference ref="89948839"/>
+							<reference ref="623096509"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3396,6 +3491,26 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">570</int>
 						<reference key="object" ref="109181183"/>
+						<reference key="parent" ref="734949212"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">588</int>
+						<reference key="object" ref="342142680"/>
+						<reference key="parent" ref="734949212"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">593</int>
+						<reference key="object" ref="216982760"/>
+						<reference key="parent" ref="734949212"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">594</int>
+						<reference key="object" ref="888193413"/>
+						<reference key="parent" ref="734949212"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">597</int>
+						<reference key="object" ref="623096509"/>
 						<reference key="parent" ref="734949212"/>
 					</object>
 				</array>
@@ -3572,6 +3687,10 @@
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="570.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="588.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="593.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="594.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="597.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3588,9 +3707,121 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">570</int>
+			<int key="maxID">598</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">AppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="browseActivityFolder:">id</string>
+						<string key="helpAndAbout:">id</string>
+						<string key="preventSleepCustomTime:">id</string>
+						<string key="preventSleepHalfHour:">id</string>
+						<string key="preventSleepOneHour:">id</string>
+						<string key="preventSleepThreeHours:">id</string>
+						<string key="preventSleepTwoHours:">id</string>
+						<string key="quit:">id</string>
+						<string key="setActivityNoSleepTime:">id</string>
+						<string key="toggleAllowSleep:">id</string>
+						<string key="toggleWindow:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="browseActivityFolder:">
+							<string key="name">browseActivityFolder:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="helpAndAbout:">
+							<string key="name">helpAndAbout:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="preventSleepCustomTime:">
+							<string key="name">preventSleepCustomTime:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="preventSleepHalfHour:">
+							<string key="name">preventSleepHalfHour:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="preventSleepOneHour:">
+							<string key="name">preventSleepOneHour:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="preventSleepThreeHours:">
+							<string key="name">preventSleepThreeHours:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="preventSleepTwoHours:">
+							<string key="name">preventSleepTwoHours:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="quit:">
+							<string key="name">quit:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="setActivityNoSleepTime:">
+							<string key="name">setActivityNoSleepTime:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="toggleAllowSleep:">
+							<string key="name">toggleAllowSleep:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="toggleWindow:">
+							<string key="name">toggleWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="activityFolderItem">NSMenuItem</string>
+						<string key="activityStatus">NSMenuItem</string>
+						<string key="label">NSTextField</string>
+						<string key="setActivityNoSleepItem">NSMenuItem</string>
+						<string key="statusMenu">NSMenu</string>
+						<string key="window">NSWindow</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="activityFolderItem">
+							<string key="name">activityFolderItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="activityStatus">
+							<string key="name">activityStatus</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="label">
+							<string key="name">label</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="setActivityNoSleepItem">
+							<string key="name">setActivityNoSleepItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="statusMenu">
+							<string key="name">statusMenu</string>
+							<string key="candidateClassName">NSMenu</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="window">
+							<string key="name">window</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AppDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSLayoutConstraint</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

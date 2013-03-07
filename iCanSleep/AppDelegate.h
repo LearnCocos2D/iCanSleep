@@ -36,20 +36,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 	NSTimer* secondsTimer;
 	NSTimer* preventSleepTimer;
 	NSTimeInterval remainingNoSleepTime;
-	NSTimeInterval activityNoSleepInterval;
 	
 	NSStatusItem* statusItem;
+	
+	// saved settings
+	NSInteger customNoSleepTime;
+	NSString* activityFolder;
+	NSInteger activityNoSleepTime;
+	BOOL activityMonitoringEnabled;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *label;
 @property (copy) NSString* currentLabelText;
 @property (weak) IBOutlet NSMenu *statusMenu;
+@property (weak) IBOutlet NSMenuItem *activityStatus;
+@property (weak) IBOutlet NSMenuItem *setActivityNoSleepItem;
+@property (weak) IBOutlet NSMenuItem *activityFolderItem;
 
 - (IBAction)preventSleepCustomTime:(id)sender;
 
 - (void)updateLastEventId: (uint64_t) eventId;
 -(void) preventSleep;
 - (IBAction)toggleWindow:(id)sender;
+- (IBAction)helpAndAbout:(id)sender;
+- (IBAction)browseActivityFolder:(id)sender;
+- (IBAction)setActivityNoSleepTime:(id)sender;
+- (IBAction)quit:(id)sender;
 
 @end
