@@ -19,9 +19,8 @@ Compared to similar tools (Caffeine, InsomniaX) it has these unique features:
 - allows you to enter a custom "prevent sleep" time in minutes
 - complete source code available - make your own modifications!
 
-====================================================================================================
-
 iCanSleep is distributed under MIT License:
+-------------------------------------------
  
 Copyright (C) 2013 Steffen Itterheim
  http://www.learn-cocos2d.com
