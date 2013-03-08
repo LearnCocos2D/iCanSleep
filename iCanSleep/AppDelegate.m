@@ -361,7 +361,7 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 }
 - (IBAction)helpAndAbout:(id)sender
 {
-	NSString* message = @"iCanSleep v1.01\niCanSleep is a free, open source status bar tool to prevent your Mac from sleeping for a while.\n\nCopyright (C) 2013 Steffen Itterheim";
+	NSString* message = @"iCanSleep v1.02\niCanSleep is a free, open source status bar tool to prevent your Mac from sleeping for a while.\n\nCopyright (C) 2013 Steffen Itterheim";
 	NSAlert* alert = [NSAlert alertWithMessageText:message
 									 defaultButton:@"Close"
 								   alternateButton:@"Help, Updates & Source Code"
