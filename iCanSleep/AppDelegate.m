@@ -83,7 +83,7 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 {
 	_activityStatus.title = [NSString stringWithFormat:@"Last Activity: %@", lastActivityTime == nil ? @"none" : lastActivityTime];
 	
-	if (activityMonitoringEnabled == NO || [[NSFileManager defaultManager] fileExistsAtPath:activityFolder] == NO)
+	if (activityMonitoringEnabled == NO)
 	{
 		_activityStatus.title = @"Activity Monitoring: OFF";
 	}
@@ -91,7 +91,7 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 
 -(void) updateActivityFolderItemTitle
 {
-	_activityFolderItem.title = [NSString stringWithFormat:@"Folder: %@", activityFolder];
+	_activityFolderItem.title = [NSString stringWithFormat:@"Folder: %@", [activityFolder stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""]];
 }
 
 
@@ -156,9 +156,10 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 
 - (void) initializeEventStream
 {
-	if ([activityFolder length] > 0 && [[NSFileManager defaultManager] fileExistsAtPath:activityFolder])
+	if ([activityFolder length] > 0)
 	{
-		NSArray* pathsToWatch = [NSArray arrayWithObject:activityFolder];
+		NSString* path = [activityFolder stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
+		NSArray* pathsToWatch = [NSArray arrayWithObject:path];
 		
 		void* appPointer = (__bridge void*)self;
 		FSEventStreamContext context = {0, appPointer, NULL, NULL, NULL};
@@ -375,7 +376,7 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 
 -(void) enableFolderActivityMonitoring
 {
-	activityMonitoringEnabled = (activityNoSleepTime > 0 && [[NSFileManager defaultManager] fileExistsAtPath:activityFolder]);
+	activityMonitoringEnabled = (activityNoSleepTime > 0);
 	[self updateActivityStatusItemTitle];
 	[self disableFolderActivityMonitoring];
 	[self initializeEventStream];
@@ -394,8 +395,7 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 	
 	if (button == NSAlertDefaultReturn)
 	{
-		activityFolder = [openPanel.URL absoluteString];
-		activityFolder = [activityFolder stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
+		activityFolder = [[openPanel.URL absoluteString] stringByReplacingOccurrencesOfString:@"%20" withString:@" "]; // fix spaces
 		activityNoSleepTime = 5 * 60; // 5 minutes
 		[self saveSettings];
 		[self updateActivityFolderItemTitle];
