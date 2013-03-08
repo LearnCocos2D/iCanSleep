@@ -288,8 +288,17 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 	if (preventSleepTimer.isValid)
 	{
 		NSTimeInterval remaining = [preventSleepTimer.fireDate timeIntervalSinceDate:[NSDate date]];
-		//NSLog(@"can't sleep for another: %.0f seconds", remaining);
-		statusItem.title = [NSString stringWithFormat:@"%@: NO (%.0f min remaining)", kStatusItemTitle, remaining / 60.0];
+		
+		if (remaining > 0)
+		{
+			//NSLog(@"can't sleep for another: %.0f seconds", remaining);
+			statusItem.title = [NSString stringWithFormat:@"%@: NO (%.0f min remaining)", kStatusItemTitle, remaining / 60.0];
+		}
+		else
+		{
+			// fix issue of waking up from manual sleep showing negative remaining time
+			[self allowSleep];
+		}
 	}
 }
 
